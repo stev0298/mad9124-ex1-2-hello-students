@@ -1,6 +1,7 @@
 'use strict'
 
 // 1. Read the JSON file into a variable called students
+const students = require("./students.json");
 
 // 2. Iterate over the students array and print Hello with their full names to the console
 // e.g. Hello Walter Baker
