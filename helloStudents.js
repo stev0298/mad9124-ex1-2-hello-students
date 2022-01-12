@@ -18,14 +18,18 @@ function test (arr, letter) {
     // Count how many students have a last name beginning with "letter":
     const count = function (arr) {
         let count = 0;
-        arr.forEach(student => {
-            count += 1;
-        });
+        for (let obj in arr) {
+            count++;
+        }
+        // Alternatively:
+        // arr.forEach(student => {
+        //     count += 1;
+        // });
 
         return count;
     };
 
-    // Output:
+    // Output (you could also simply use filteredArr.length to return the number of items in the array):
     console.log(`${count(filteredArr)} student(s) have a last name starting with ${letter.toUpperCase()}.`);
 }
 
