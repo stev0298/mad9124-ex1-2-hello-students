@@ -13,7 +13,8 @@ students.forEach(student => {
 // e.g. Count of last names starting with D is 1
 function test (arr, letter) {
     // Filter the original array to only include students whose last name starts with "letter":
-    let filteredArr = arr.filter(student => student.lastName.toLowerCase().startsWith(letter.toLowerCase()));
+    // let filteredArr = arr.filter(student => student.lastName.toLowerCase().startsWith(letter.toLowerCase()));
+    let filteredArr = arr.filter(student => student.lastName.toLowerCase().charAt(0) === letter.toLowerCase());
 
     // Count how many students have a last name beginning with "letter":
     const count = function (arr) {
