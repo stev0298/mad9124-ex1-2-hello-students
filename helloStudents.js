@@ -11,27 +11,31 @@ students.forEach(student => {
 
 // 3. Print out the number of last names starting with the letter D
 // e.g. Count of last names starting with D is 1
-function test (arr, letter) {
-    // Filter the original array to only include students whose last name starts with "letter":
-    let filteredArr = arr.filter(student => student.lastName.toLowerCase().charAt(0) === letter.toLowerCase());
+function findNumOf(arr, letter) {
+    if (letter.length === 1 && letter.match(/[a-zA-Z]/)) {
+        // Filter the original array to only include students whose last name starts with "letter":
+        let filteredArr = arr.filter(student => student.lastName.toLowerCase().charAt(0) === letter.toLowerCase());
 
-    // Count how many students have a last name beginning with "letter":
-    const count = function (arr) {
-        let count = 0;
-        for (let obj in arr) {
-            count++;
-        }
-        // Alternatively:
-        // arr.forEach(student => {
-        //     count += 1;
-        // });
+        // Count how many students have a last name beginning with "letter":
+        const count = function (arr) {
+            let count = 0;
+            for (let obj in arr) {
+                count++;
+            }
+            // Alternatively:
+            // arr.forEach(student => {
+            //     count += 1;
+            // });
 
-        return count;
-    };
+            return count;
+        };
 
-    // Output (you could also simply use filteredArr.length to return the number of items in the array):
-    console.log(`${count(filteredArr)} student(s) have a last name starting with ${letter.toUpperCase()}.`);
+        // Output (you could also simply use filteredArr.length to return the number of items in the array):
+        console.log(`${count(filteredArr)} student(s) have a last name starting with ${letter.toUpperCase()}.`);
+    } else {
+        console.log("You did not enter a single letter. Try again.");
+    }
 }
 
 // Call function:
-test(students, "D"); // You can filter and count by any letter.
+findNumOf(students, "D"); // You can filter and count by any single letter.
